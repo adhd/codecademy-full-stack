@@ -1,3 +1,18 @@
+/*
+
+Project name: Magic Eight Ball
+
+In this project we will build a Magic Eight Ball using control flow in JavaScript. 
+The user will be able to input a question, then our program will output a random fortune.
+
+Key notes:
+  -> Template literals must use ` (backtick) -- e.g. for string interpolation
+  -> Switch cases (don't forget to break out of the switch block) ... otherwise the next 
+     code block in the switch statement is executed
+  -> default keyword specifies some code to run if there is no case match.
+
+*/
+
 let userName = 'mightBeDave';
 
 userName ? console.log(`Hello, ${userName}!`) : console.log('Hello!'); 

@@ -9,4 +9,8 @@ Learn the fundamentals of JavaScript: syntax, variables, conditionals, and funct
 03. Rock Paper Scissors
 04. Sleep Debt Calculator
 05. JavaScript Fundamentals Review
-06. ...
+06. Number Guesser
+07. Meal Maker
+08. Team Stats
+09. Grammar Checker
+10. ...

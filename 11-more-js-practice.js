@@ -68,6 +68,17 @@ console.log(subLength('cheesecake', 'k')); // returns 0
  * @return [str]           [string containing the names of the grocery items, separated by commas and the word 'and' for the last two items]
  */
  
- function groceries() {
- 
- }
+ function groceries(arr) {
+  itemArr = arr.map(e => e.item);
+
+  if (itemArr.length == 1) {
+    return itemArr[0];
+  }
+
+  const res = itemArr.join(', ');
+  const f_idx = res.lastIndexOf(',');
+  
+  return res.slice(0, f_idx) + ' and' + res.slice(f_idx + 1);
+}
+
+// console.log(groceries( [{item: 'Carrots'}, {item: 'Pesto'}, {item: 'Rigatoni'}] ));

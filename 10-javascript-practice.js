@@ -239,3 +239,39 @@ function isTheDinnerVegan(arr) {
  * @return [arr]        [array of species objects sorted in asc order based on avg no. of teeth]
  */
 
+const speciesArray = [ {speciesName:'shark', numTeeth:50}, {speciesName:'dog', numTeeth:42}, {speciesName:'alligator', numTeeth:80}, {speciesName:'human', numTeeth:32}];
+
+function sortSpeciesByTeeth(arr) {
+  const lenArr = arr.length;
+  
+  if (lenArr <= 1) {
+    return arr;
+  }
+  
+  const p_idx = Math.floor(lenArr / 2);
+  const p_val = arr[p_idx]['numTeeth'];
+  const left = [];
+  const right = [];
+
+  for (let i = 0; i < lenArr; i++) {
+    if (i == p_idx) {
+      // pass ... also stupid/arb selection of pivot
+    } else if (arr[i]['numTeeth'] < p_val) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
+    }
+  }
+
+  return [...sortSpeciesByTeeth(left), arr[p_idx], ...sortSpeciesByTeeth(right)]
+}
+
+// console.log(sortSpeciesByTeeth(speciesArray))
+
+// Should print:
+// [ { speciesName: 'human', numTeeth: 32 },
+//   { speciesName: 'dog', numTeeth: 42 },
+//   { speciesName: 'shark', numTeeth: 50 },
+//   { speciesName: 'alligator', numTeeth: 80 } ]
+
+

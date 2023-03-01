@@ -277,7 +277,7 @@ function sortSpeciesByTeeth(arr) {
 
 /**
  * Write a function, findMyKeys(), that takes in an array of strings which may or may not contain 
-  *'keys'. If the keys are in the array, your function should return the index at which they can be 
+ * 'keys'. If the keys are in the array, your function should return the index at which they can be 
  * found. If they’re not in the array, your function should return -1.
  * 
  * @param  [arr]  arr   [array of strings]
@@ -287,4 +287,48 @@ function sortSpeciesByTeeth(arr) {
 function findMyKeys(arr) {
   const idx = arr.findIndex(e => e === 'keys');
   return idx; 
+}
+
+
+/**
+ * Write a function, dogFactory(), have 3 parameters: name, breed, and weight (in that order).
+ * It should expect name and breed to be strings, expect weight to be a number, and return an 
+ * object. Each of those parameters should be keys on the returned object returned with the 
+ * values of the arguments that were passed in.
+ * 
+ * @param  [str]  name     [name of dog]
+ * @param  [str]  breed    [breed of dog]
+ * @param  [num]  weight   [weight of dog]
+ * @return [obj]           [new dog object]
+ */
+
+function dogFactory(name, breed, weight) {
+  return {_name: name,
+          _breed: breed,
+          _weight: weight,
+          get name() {
+            return this._name;
+          },
+          get breed() {
+            return this._breed;
+          },
+          get weight() {
+            return this._weight;
+          },
+          set name(newName) {
+            this._name = newName;
+          },
+          set breed(newBreed) {
+            this._breed = newBreed;
+          },
+          set weight(newWeight) {
+            this._weight = newWeight;
+          },
+          bark() {
+            return 'ruff! ruff!';
+          },
+          eatTooManyTreats() {
+            this._weight += 1;
+          }
+  }
 }

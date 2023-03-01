@@ -156,6 +156,25 @@ function sortYears(arr) {
 }
 
 function quickSort(arr) {
+  /* quickSort takes an array arr as input and returns a sorted array. The base case 
+  occurs when the length of the array <= 1, in which case the array is already sorted.
+
+  Otherwise, the function chooses the first element of the array as the pivot and creates 
+  two empty arrays (left and right) to hold the elements less than and greater than the pivot, 
+  respectively. It then iterates through the rest of the array and moves each element to the 
+  appropriate sub-array based on whether it is less than or greater than the pivot.
+
+  Finally, the function recursively applies quickSort to each sub-array and combines the results 
+  with the pivot to produce the final sorted array.
+  
+  SPREAD [SYNTAX]
+  (...) is a feature in that allows an iterable (such as an array) to be expanded or "spread" into 
+  individual elements. It's used to used to concatenate the sorted sub-arrays (left and right) with 
+  the pivot element (pivot) into a single array that is returned from the quickSort function.
+
+
+  */
+  
   if (arr.length <= 1) {
     return arr; // base case
   }

@@ -89,7 +89,20 @@ function validateCred(arr) {
  */
 
 function findInvalidCards(ccArr) {
+  return ccArr.filter(e => validateCred(e) === 'invalid');
+}
+  
+// console.log(findInvalidCards(batch));
+  
+
+/**
+ * Write a function idInvalidCardCompanies() that has one parameter for a nested array of invalid 
+ * numbers and returns an array of companies.
+ * 
+ * @param  [arr]  arr      [array of invalid cc numbers]
+ * @return [arr]           [array of companies]
+ */
+  
+function idInvalidCardCompanies() {
   // pass
 }
-
-

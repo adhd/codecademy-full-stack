@@ -193,3 +193,49 @@ function quickSort(arr) {
 
   return [...quickSort(left), pivot, ...quickSort(right)];
 }
+
+
+/**
+ * Write a function,justCoolStuff() that takes in two arrays of strings, and, using the 
+ * built-in .filter() method, returns an array with the items that are present in both arrays.
+ * @param  [arr] arr1 [first input array of strings]
+ * @param  [arr] arr2 [second input array of strings.]
+ * @return [arr]      [array containing the common elements between arr1 and arr2]
+ */
+
+function justCoolStuff(arr1, arr2) {
+  return arr1.filter(e => arr2.includes(e));
+}
+
+
+/**
+ * Write a function isTheDinnerVegan() that takes in an array of food objects in the format:
+ * {name: 'cabbage', source: 'plant' } and returns a boolean value based on whether or not 
+ * every item in the array has entirely plant-based origins.
+ * 
+ * @param  [arr]   arr  [array of food objects in the format {name: 'cabbage', source: 'plant'}]
+ * @return [bool]       [indicator - if every item in the array has entirely plant-based origins]
+ */
+
+function isTheDinnerVegan(arr) {
+  let   res     = true;
+  const lenArr  = arr.length;
+  
+  for (let i = 0; i < arr.length; i++) {
+    const plant_indicator = (arr[i]['source'] === 'plant');
+    res = res && plant_indicator;
+  }
+
+  return res;
+}
+
+
+/**
+ * Write a function sortSpeciesByTeeth() that takes in an array of species objects in the format:
+ * {speciesName: 'shark', numTeeth: 50 } and sorts the array in ascending order based on the 
+ * average number of teeth that species possesses (numTeeth).
+ * 
+ * @param  [arr]  arr   [array of species objects]
+ * @return [arr]        [array of species objects sorted in asc order based on avg no. of teeth]
+ */
+

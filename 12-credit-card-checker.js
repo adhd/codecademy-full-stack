@@ -103,6 +103,28 @@ function findInvalidCards(ccArr) {
  * @return [arr]           [array of companies]
  */
   
-function idInvalidCardCompanies() {
-  // pass
+function idInvalidCardCompanies(arr) {
+  // initialize credit card company lookup
+  let dict = new Object();
+  dict[3] = 'Amex (American Express)';
+  dict[4] = 'Visa';
+  dict[5] = 'Mastercard';
+  dict[6] = 'Discover';
+
+  const lenArr = arr.length;
+  const resArr = [];
+  for (let i = 0; i < lenArr; i++) {
+    const firstDigit = arr[i][0];
+    const currCompany = dict[firstDigit];
+    if (resArr.includes(currCompany)) {
+      // pass
+    } else {
+      resArr.push(currCompany)
+    }
+  }
+
+  return resArr;
 }
+  
+// const invalidCards = findInvalidCards(batch);
+// console.log(idInvalidCardCompanies(invalidCards));

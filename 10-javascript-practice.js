@@ -95,11 +95,62 @@ const smallestPowerOfTwo = arr => {
  * each of them. The .forEach() function should apply politelyDecline() directly; it 
  * should NOT merely receive an argument function that uses politelyDecline().
  * [returns new array with smallest powers of two]
- * @param  [arr] arr [array of strings]
- * @return [arr]     [output array of smallest powers of two]
+ * @param  [arr] arr [array of foods]
+ * @return [arr]     [output string declining every food]
  * 
  * Next, write a function acceptEverything() that takes in an array of strings and 
  * loops through each element in the array and grudgingly accepts each of them, by 
  * logging to the console in the following format: 'Ok, I guess I will eat some [element].'
- *  
+ * @param  [arr] arr [array of foods]
+ * @return [str]     [output string accepting every food] 
  */
+
+const veggies = ['broccoli', 'spinach', 'cauliflower', 'broccoflower'];
+
+const politelyDecline = (veg) => {
+      console.log('No ' + veg + ' please. I will have pizza with extra cheese.');
+}
+
+// Write your code here:
+
+function declineEverything(arr) {
+ arr.forEach(politelyDecline);
+}
+
+// declineEverything(veggies)
+
+function acceptEverything(arr) {
+  arr.forEach(element => {
+    console.log(`Ok, I guess I will eat some ${element}.`);
+  });
+}
+
+/**
+ * Write a function, shoutGreetings(), that takes in an array of strings and returns a 
+ * new array. This new array should contain all the strings from the argument array but 
+ * with capitalized letters and an exclamation point appended to the end: 'heya' will 
+ * become 'HEYA!'
+ * @param  [arr] arr [input array of strings]
+ * @return [arr]     [output array of strings, ALL CAPS with '!' appended to end of each str]
+ */
+
+function shoutGreetings(arr) {
+  arr = arr.map(elem => elem.toUpperCase() + '!');
+  return arr;
+}
+
+// const greetings = ['hello', 'hi', 'heya', 'oi', 'hey', 'yo'];
+// console.log(shoutGreetings(greetings))
+// Should print [ 'HELLO!', 'HI!', 'HEYA!', 'OI!', 'HEY!', 'YO!' ]
+
+
+/**
+ * Write a function, sortYears(), that takes in an array of years, and, using the built-in 
+ * .sort() method, returns that array with the years sorted in descending order.
+ * @param  [arr] arr [input array of numbers]
+ * @return [arr]     [output array of numbers, sorted in desc order]
+ */
+
+function sortYears(arr) {
+  return arr.sort().reverse();
+}

@@ -33,12 +33,63 @@ const mystery5 = [4, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3];
 const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, invalid3, invalid4, invalid5, mystery1, mystery2, mystery3, mystery4, mystery5];
 
 
-// Add your functions below:
+// Functions
+
+/**
+ * Write a function validateCred() that has a parameter of an array. The purpose of validateCred() 
+ * is to return true when an array contains digits of a valid credit card number and false when 
+ * it is invalid. This function should NOT mutate the values of the original array.
+ * 
+ * 1. Starting from the farthest digit to the right, AKA the check digit, iterate to the left.
+ * 2. As you iterate to the left, every other digit is doubled (the check digit is not doubled). 
+ *    If the number is greater than 9 after doubling, subtract 9 from its value.
+ * 3. Sum up all the digits in the credit card number.
+ * 4. If the sum modulo 10 is 0 (if the sum divided by 10 has a remainder of 0) then the number 
+ *    is valid, otherwise, it’s invalid.
+ * 
+ * @param  [arr]  arr      [array of numbers]
+ * @return [str]           [return whether or not cc no is valid or invalid]
+ */
+
+function validateCred(arr) {
+  const lenArr = arr.length;
+  let res = 0;
+  const double = true;
+  let digitsProcessed = 1;
+
+  for (let i = lenArr - 1; i >= 0; i--) {
+    if (i == lenArr - 1) {
+      // pass
+      res += arr[lenArr - 1];
+    } else {
+      // increment counter
+      digitsProcessed += 1;
+      
+      // check if we should double or not
+      if (digitsProcessed % 2 == 0) {
+        if (arr[i] * 2 > 9) {
+          res += (arr[i] * 2 - 9);
+        } else {
+          res += arr[i] * 2;
+        }
+      } else { 
+        res += arr[i];
+      }
+    }
+  }
 
 
+/**
+ * Write a function findInvalidCards() that has one parameter for a nested array of credit card 
+ * numbers. The role of findInvalidCards() is to check through the nested array for which numbers 
+ * are invalid, and return another nested array of invalid cards.
+ * 
+ * @param  [arr]  arr      [array of cc numbers]
+ * @return [arr]           [array of invalid cc numbers]
+ */
 
-
-
-
+function findInvalidCards(ccArr) {
+  // pass
+}
 
 

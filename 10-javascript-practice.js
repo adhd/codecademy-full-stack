@@ -154,3 +154,23 @@ function shoutGreetings(arr) {
 function sortYears(arr) {
   return arr.sort().reverse();
 }
+
+function quickSort(arr) {
+  if (arr.length <= 1) {
+    return arr; // base case
+  }
+
+  const pivot = arr[0]; // choose first element as pivot
+  const left = [];
+  const right = [];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < pivot) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
+    }
+  }
+
+  return [...quickSort(left), pivot, ...quickSort(right)];
+}

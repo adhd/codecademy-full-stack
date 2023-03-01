@@ -275,3 +275,16 @@ function sortSpeciesByTeeth(arr) {
 //   { speciesName: 'alligator', numTeeth: 80 } ]
 
 
+/**
+ * Write a function, findMyKeys(), that takes in an array of strings which may or may not contain 
+  *'keys'. If the keys are in the array, your function should return the index at which they can be 
+ * found. If they’re not in the array, your function should return -1.
+ * 
+ * @param  [arr]  arr   [array of strings]
+ * @return [num]        [index of key, or -1 if not in arr]
+ */
+
+function findMyKeys(arr) {
+  const idx = arr.findIndex(e => e === 'keys');
+  return idx; 
+}

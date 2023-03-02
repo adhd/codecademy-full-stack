@@ -128,3 +128,66 @@ function idInvalidCardCompanies(arr) {
   
 // const invalidCards = findInvalidCards(batch);
 // console.log(idInvalidCardCompanies(invalidCards));
+
+  
+/**
+ * Write a function strToNumArray() that accepts a string and converts 
+ * it into an array of numbers like the initially provided arrays.
+ * 
+ * @param  [str]  str      [input credit card number as a string]
+ * @return [arr]           [array of cc number digits]
+ */
+
+function strToNumArray(str) {
+  const resArr = [];
+  const lenArr = str.length;
+  for (let i = 0; i < lenArr; i++) {
+    const digit = parseInt(str[i]);
+    resArr.push(digit);
+  }
+  return resArr;
+}
+
+// console.log(strToNumArray('1337'));
+  
+
+/**
+ * Write a function invalidToValid() that will convert invalid numbers
+ * into valid numbers.
+ * 
+ * @param  [arr]  arr      [invalid credit card number]
+ * @return [arr]           [valid credit card number]
+ */
+
+function diffToValid(arr) {
+  const lenArr = arr.length;
+  let res = 0;
+  const double = true;
+  let digitsProcessed = 1;
+
+  for (let i = lenArr - 1; i >= 0; i--) {
+    if (i == lenArr - 1) {
+      // pass
+      res += arr[lenArr - 1];
+    } else {
+      // increment counter
+      digitsProcessed += 1;
+      
+      // check if we should double or not
+      if (digitsProcessed % 2 == 0) {
+        if (arr[i] * 2 > 9) {
+          res += (arr[i] * 2 - 9);
+        } else {
+          res += arr[i] * 2;
+        }
+      } else { 
+        res += arr[i];
+      }
+    }
+  }
+  return res % 10;
+}
+  
+function invalidToValid() {
+  // pass
+}

@@ -13,4 +13,8 @@ Learn the fundamentals of JavaScript: syntax, variables, conditionals, and funct
 07. Meal Maker
 08. Team Stats
 09. Grammar Checker
-10. ...
+10. Javascript Practice
+11. More JS Practice
+12. Credit Card Checker
+13. Mysterious Organism
+14. ...

@@ -72,6 +72,28 @@ const pAequorFactory = (orgNum, baseArr) => {
       } else {
         return false;
       }
+    },
+    complementStrand() {
+      const totalElems = this.dna.length;
+      const compl = [];
+
+      for (i = 0; i < totalElems; i++) {
+        switch (this.dna[i]) {
+          case 'A':
+            compl.push('T');
+            break;
+          case 'T':
+            compl.push('A');
+            break;
+          case 'C':
+            compl.push('G');
+            break;
+          case 'G':
+            compl.push('C');
+            break;
+        }
+      }
+      return compl;
     }
     }
   }

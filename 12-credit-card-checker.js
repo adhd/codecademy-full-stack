@@ -188,6 +188,74 @@ function diffToValid(arr) {
   return res % 10;
 }
   
-function invalidToValid() {
-  // pass
+function invalidToValid(arr) {
+  const lenArr = arr.length;
+
+  // check if card number is valid already
+  if (validateCred(arr) === 'valid') {
+    return arr;
+  } else { 
+    // otherwise convert invalid to valid
+    const diff = diffToValid(arr);
+    let double = true;
+    let lastDig = arr.slice(-1);
+
+    let res = arr.slice(0, -1);
+    
+    if (arr.slice(-1) >= diff) {
+      // if check digit is larger than diff, subtract diff from check, making the final cc number valid
+      res.push(arr.slice(-1) - diff);
+    } else {
+      // otherwise, we need to modify more than just the check digit (starting from the right-most check digit, and moving towards the left)
+      // diff is comprised of two components: an odd and even component
+      let odd_rem = (diff % 2);
+      let evn_rem = (diff - odd_rem);
+      
+      // reduce check digit by odd_rem
+      while (lastDig - 1 >= 0 && odd_rem > 0) {
+        lastDig -= 1;
+        odd_rem -= 1;
+      }
+
+      // reduce check digit by evn_rem
+      while (lastDig - 2 >= 0 && evn_rem > 0) {
+        lastDig -= 2;
+        evn_rem -= 2;
+      }
+
+      // push unmodified check digit back
+      res.push(lastDig);
+      
+      // step through digits, going left, starting at the digit left of the check digit 
+      for (let i = lenArr - 2; i >= 0; i--) {
+        // check if digit needs to be doubled
+        if (double) {
+          // if digit to be doubled, decrement evn_rem
+          while (res[i] - 1 >= 0) {
+            if (res[i] != 5) {
+              // decrementing a digit by 1 results in sum decremented by 2
+              evn_rem -= 2;
+              res[i] -= 1;
+            } else {
+              // pass bc changing digit from 5 to 4 has a net impact of +7 on the sum
+              break;
+            }
+          }
+        } else {
+          // for digits that aren't doubled, decrement odd_rem and the digit in question
+          if (odd_rem > 0 && res[i] > 0) {
+            odd_rem -= 1;
+            res[i] -= 1;
+          }
+        }
+        double = !double;
+      }
+      //res.push(arr.slice(-1) - diff);
+    }
+  if (validateCred(res) == 'valid') {    
+    return res;
+  }  
+  }
 }
+  
+// console.log(invalidToValid(invalid1));

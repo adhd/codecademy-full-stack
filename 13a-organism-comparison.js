@@ -40,9 +40,10 @@ function mostSimilar(dnaArr) {
       }
     }
 
-    // iterate over the dna objects in the hash map and calculate their similarity score
+    // iterate over each dna stand (character) in the hash map and calculate their similarity score
     strandMap.forEach((value, key) => {
       let similarity = 0;
+      // for each dna object (string, check and increment similarity score)
       for (let j = 0; j < dnaArr.length; j++) {
         if (dnaArr[j][i] === key) {
           similarity += 1;
@@ -57,6 +58,6 @@ function mostSimilar(dnaArr) {
         maxIndices.push(dnaMap.get(key));
       }
     });
-  } // end for outer loop (iterate over strands)
+  } // end for outer loop (iterating over strands)
   return maxIndices;
 }

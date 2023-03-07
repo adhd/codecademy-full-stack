@@ -34,3 +34,4 @@ function txtParser(fileName) {
     })
     .catch(error => console.error(error));
 }
+

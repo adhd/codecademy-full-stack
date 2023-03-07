@@ -5,9 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mixed Messages</title>
+    <link rel="stylesheet" href="https://kit.fontawesome.com/6fa3c2bf53.css" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
   </head>
   <body>
-	<script src="index.js"></script>
+    <div id="cards">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-image">
+            <i class="fa-duotone fa-apartment"></i>
+          </div>
+          <div class="card-info-wrapper">
+            <div class="card-info">
+              <i class="fa-duotone fa-apartment"></i>
+              <div class="card-info-title">
+                <h3>Lorem</h3>  
+                <h4>Ipsum</h4>
+              </div>    
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <div class="card-image">
+            <i class="fa-duotone fa-unicorn"></i>
+          </div>
+          <div class="card-info-wrapper">
+            <div class="card-info">
+              <i class="fa-duotone fa-unicorn"></i>
+              <div class="card-info-title">
+                <h3>Lorem</h3>  
+                <h4>Ipsum</h4>
+              </div>    
+            </div>  
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <div class="card-image">
+            <i class="fa-duotone fa-blender-phone"></i>
+          </div>
+          <div class="card-info-wrapper">
+            <div class="card-info">
+              <i class="fa-duotone fa-blender-phone"></i>
+              <div class="card-info-title">
+                <h3>Lorem</h3>  
+                <h4>Ipsum</h4>
+              </div>    
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <div class="card-image">
+            <i class="fa-duotone fa-person-to-portal"></i>
+          </div>
+          <div class="card-info-wrapper">
+            <div class="card-info">
+              <i class="fa-duotone fa-person-to-portal"></i>
+              <div class="card-info-title">
+                <h3>Lorem</h3>  
+                <h4>Ipsum</h4>
+              </div>    
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <div class="card-image">
+            <i class="fa-duotone fa-person-from-portal"></i>
+          </div>
+          <div class="card-info-wrapper">
+            <div class="card-info">
+              <i class="fa-duotone fa-person-from-portal"></i>
+              <div class="card-info-title">
+                <h3>Lorem</h3>  
+                <h4>Ipsum</h4>
+              </div>    
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <div class="card-image">
+            <i class="fa-duotone fa-otter"></i>
+          </div>
+          <div class="card-info-wrapper">
+            <div class="card-info">
+              <i class="fa-duotone fa-otter"></i>
+              <div class="card-info-title">
+                <h3>Lorem</h3>  
+                <h4>Ipsum</h4>
+              </div>    
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="effects.js"></script>
+    <script src="index.js"></script>
+    <script>
+      // check if fa is loaded
+      window.onload = function () {
+        var span = document.createElement('span');
+      
+        span.className = 'fa';
+        span.style.display = 'none';
+        document.body.insertBefore(span, document.body.firstChild);
+        
+        alert(window.getComputedStyle(span, null).getPropertyValue('font-family'));
+          
+        document.body.removeChild(span);
+      };
+      </script>
   </body>
 </html>

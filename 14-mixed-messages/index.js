@@ -29,30 +29,34 @@ function randIndexGen(arr) {
  * A function, displayNewText(), function selects the .dynamic-text 
  * element within the clicked card using the event.currentTarget 
  * property and the querySelector() method.
- * @param  [str] event   [input array]
- * @return 
+ * @param  [str] event   [eventListener]
  */
 
 // select all elements with class "card" and store in cards
 const cards = document.querySelectorAll('.card');
 
 function displayNewText(event) {
-  // 
+  // select the .dynamic-text (or -dynamic-head) element within the clicked card
   const dynamicText = event.currentTarget.querySelector('.dynamic-text'); 
   const dynamicHead = event.currentTarget.querySelector('.dynamic-head'); 
 
+  // generate random index for each array
   const rand1Index = randIndexGen(rand1);
   const rand2Index = randIndexGen(rand2);
   const rand3Index = randIndexGen(rand3);
 
+  // generate random text 
   const res_text = `${rand2[rand2Index]} says: ${rand3[rand3Index]}`;
   const res_head = rand3[rand3Index];
+
+  // display random texts
   dynamicText.textContent = res_text;
   dynamicHead.textContent = res_head;
-  //document.getElementById("dynamic-text").innerHTML = res;
 }
 
-// add event listener to each card
+// add event listener to each card;  loops through each card element using 
+// the forEach() method and adds an event listener to each card that listens 
+// for a "click" event and calls the displayNewText() function
 cards.forEach(card => {
   card.addEventListener('click', displayNewText);
 });

@@ -1,18 +1,29 @@
 body{
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  overflow: hidden;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background: #ffc63f;
+  background: #141c3a;
 }
-.title{
-  font-size: 36px;
+
+h1{
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(3rem, 10vw, 10rem);
+  color: white;
+  padding: 0rem clamp(1rem, 2vw, 3rem);
+  border-radius: clamp(0.4rem, 0.75vw, 1rem);
   margin-top: 10px;
   margin-bottom: 0px;
   padding: 0;
-  color: #141c3a;
   text-transform: uppercase;
   letter-spacing: 2px;
   text-align: center;
+}
+h1:hover {
+  background-color: white;
+  color: black;
 }
 #demo{
   text-align: center;

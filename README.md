@@ -18,5 +18,7 @@ Learn the fundamentals of JavaScript: syntax, variables, conditionals, and funct
 12. Credit Card Checker
 13. Mysterious Organism
 14. Mixed Messages (JS Portfolio Project)
-15. ...
-16. ...
+15. Piano Keys
+16. Form a Story
+17. Build a Library
+18. ...
